@@ -1,3 +1,5 @@
+import jdk.nashorn.internal.ir.ContinueNode;
+
 import java.util.*;
 
 class Player {
@@ -13,12 +15,25 @@ class Player {
 class Checker implements Comparator<Player> {
     // complete this method
     public int compare(Player a, Player b) {
-
+        if(a.score >b.score){
+            return -1;
+        }
+        else if(a.score < b.score){
+            return 1;
+        }else{
+            if(a.name.compareTo(b.name) > 0){
+                return 1;
+            }else if(a.name.compareTo(b.name) < 0){
+                return -1;
+            }else {
+                return 0;
+            }
+        }
     }
 }
 
 
-public class Comparator {
+public class Compare {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
